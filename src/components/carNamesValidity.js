@@ -8,7 +8,10 @@ function lengthValidity(names) {
 }
 function duplicationValidity(names) {
   const setNames = new Set(names);
-  return (names.length === setNames.size) ? true : false;
+  if (names.length !== setNames.size) {
+    return alert('차의 이름은 모두 달라야 합니다.');
+  }
+  return true;
 }
 
 export function CarNamesValidity(names) {
