@@ -1,5 +1,6 @@
 import { MakeRandomNumberList } from './makeRandomNumberList.js';
 import { PrintCarMoving } from './printCarMoving.js';
+import { PrintWinner } from './printWinners.js';
 
 export function PlayRacing(carList, racingCount) {
   for (let i = 0; i < racingCount; i++){
@@ -11,4 +12,5 @@ export function PlayRacing(carList, racingCount) {
     }
     PrintCarMoving(carList);
   }
+  PrintWinner(carList);
 }
