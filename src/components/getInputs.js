@@ -10,6 +10,7 @@ function carNamesGet() {
     const names = $('#car-names-input').value.split(',');
     if (CarNamesValidity(names)) {
       $('#car-names-submit').disabled = true;
+      $('#racing-count-submit').disabled = false;
       carNames = names;
     }
   });
@@ -17,21 +18,15 @@ function carNamesGet() {
 }
 function tryCountGet(carNamesList) {
   $('#racing-count-submit').addEventListener('click', () => {
-    if (carNamesList === []) {
-      return alert('자동차 이름을 먼저 입력해주세요');
-    }
     const tryCount = parseInt($('#racing-count-input').value);
     if (TryCountValidity(tryCount)) {
       $('#racing-count-submit').disabled = true;
-      return tryCount;
+      const carList = MakeToCar(carNamesList);
+      PlayRacing(carList, tryCount);
     }
   });
 }
 export function GetInputs() {
   const carNamesList = carNamesGet();
-  const racingCount = tryCountGet(carNamesList);
-  if (carNamesList.length > 0 && !isNaN(racingCount)) {
-    const carList = MakeToCar(carNamesList);
-    PlayRacing(carList, racingCount);
-  }
+  tryCountGet(carNamesList); 
 }
