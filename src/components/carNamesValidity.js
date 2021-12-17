@@ -11,14 +11,12 @@ function duplicationValidity(names) {
   return (names.length === setNames.size) ? true : false;
 }
 
-export function CarNamesValidity(carNameInput) {
-  const names = carNameInput.split(',');
+export function CarNamesValidity(names) {
   if (!lengthValidity(names)) {
     return false;
   }
   if (!duplicationValidity(names)) {
     return false;
   }
-  console.log(names);
   return true;
 }

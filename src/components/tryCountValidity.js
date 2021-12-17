@@ -10,7 +10,7 @@ function rangeValiditiy(input) {
   }
   return true;
 }
-export function tryCountValidity(countInput) {
+export function TryCountValidity(countInput) {
   if (!integerValidity(countInput)) {
     return false;
   }
