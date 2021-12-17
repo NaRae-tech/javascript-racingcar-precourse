@@ -11,8 +11,8 @@ function duplicationValidity(names) {
   return (names.length === setNames.size) ? true : false;
 }
 
-export function CarNamesValidity(userInput) {
-  const names = userInput.split(',');
+export function CarNamesValidity(carNameInput) {
+  const names = carNameInput.split(',');
   if (!lengthValidity(names)) {
     return false;
   }
